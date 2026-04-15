@@ -103,15 +103,15 @@ class ValidateResponse(BaseModel):
     valid: bool
 
 
-# Stats Models
+# Stats Models - Support both camelCase and snake_case
 class ChainStatsResponse(BaseModel):
     """Chain statistics response."""
     height: int
     difficulty: int
-    total_work: int = Field(alias="totalWork")
-    current_reward: int = Field(alias="currentReward")
-    total_mined: int = Field(alias="totalMined")
-    max_supply: int = Field(alias="maxSupply")
+    total_work: Optional[int] = Field(default=None, alias="totalWork")
+    total_mined: Optional[int] = Field(default=None, alias="totalMined")
+    current_reward: Optional[int] = Field(default=None, alias="currentReward")
+    max_supply: Optional[int] = Field(default=None, alias="maxSupply")
     
     class Config:
         populate_by_name = True
