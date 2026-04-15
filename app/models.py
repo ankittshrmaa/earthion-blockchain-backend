@@ -7,6 +7,7 @@ from typing import Optional
 from pydantic import BaseModel, Field, field_validator
 
 
+
 # Block Models
 class TXInputModel(BaseModel):
     """Transaction input model."""
